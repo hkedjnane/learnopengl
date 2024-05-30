@@ -18,9 +18,18 @@
         devShells.default = mkShell {
           buildInputs = [
             libgcc
+            glfw3
+            cmake
+            clang-tools
+
+            #GLFW build dependencies
+            libxkbcommon
+            wayland-scanner
+            wayland-protocols
           ];
 
           shellHook = ''
+            export LD_LIBRARY_PATH=${pkgs.wayland}/lib:$LD_LIBRARY_PATH
           '';
         };
       }

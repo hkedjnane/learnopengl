@@ -33,3 +33,5 @@
 
 # Direnv
 .direnv
+
+build/
